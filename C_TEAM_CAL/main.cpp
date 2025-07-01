@@ -3,7 +3,6 @@
 
 class Cal {
 public:
-    //�̰��� �ڵ� �ۼ�
     double getSumSum(double a, double b, double c) {
         return a + b + c;
     }
@@ -13,6 +12,7 @@ public:
 	  }
     int getGop(int a, int b) { return a * b; }
     int getMinus(int a, int b) { return a - b; }
+    int getDvide(int a, int b) { return a / b; }
 };
 
 //Å×½ºÆ® ÄÉÀÌ½º ÀÛ¼º
@@ -66,6 +66,12 @@ TEST(t1, Test_Minus) {
 TEST(t1, Test_Gop) {
     Cal cal;
     EXPECT_EQ(6, cal.getGop(2,3));
+}
+
+TEST(CalTest, DivideTC) {
+    Cal cal;
+    int ret = cal.getDvide(4, 2);
+    EXPECT_EQ(2, ret);
 }
 
 int main() {
