@@ -3,6 +3,10 @@
 
 class Cal {
 public:
+    //�̰��� �ڵ� �ۼ�
+    double getSumSum(double a, double b, double c) {
+        return a + b + c;
+    }
     int getZegop(int a) { return a * a; };
     int getSum(int a, int b) {
         return a + b;
@@ -14,6 +18,12 @@ public:
 //Å×½ºÆ® ÄÉÀÌ½º ÀÛ¼º
 TEST(t1, t2) {
     EXPECT_EQ(1, 1);
+}
+
+
+TEST(Calculator, TC6) {
+    Cal cal;
+    EXPECT_EQ(6, cal.getSumSum(1,2,3));
 }
 
 TEST(TSgetZegop, TC1) {
@@ -38,6 +48,8 @@ TEST(TSgetZegop, TC3) {
     Cal c;
     int ret = c.getZegop(a);
     EXPECT_EQ(exp, ret);
+}
+
 TEST(CalTest, GetSumTest) {
     Cal calculator;
     EXPECT_EQ(calculator.getSum(1, 1), 2);
