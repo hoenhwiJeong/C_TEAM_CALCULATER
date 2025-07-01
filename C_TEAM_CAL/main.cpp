@@ -1,16 +1,16 @@
 #include "gmock/gmock.h"
+#include <iostream>
 
 class Cal {
 public:
-    //ÀÌ°÷¿¡ ÄÚµå ÀÛ¼º
     int getZegop(int a) { return a * a; };
+    int getGop(int a, int b) { return a * b; }
 };
 
-//Å×½ºÆ® ÄÉÀÌ½º ÀÛ¼º
+//Ã…Ã—Â½ÂºÃ†Â® Ã„Ã‰Ã€ÃŒÂ½Âº Ã€Ã›Â¼Âº
 TEST(t1, t2) {
     EXPECT_EQ(1, 1);
 }
-
 
 TEST(TSgetZegop, TC1) {
     int exp = 1;
@@ -36,6 +36,10 @@ TEST(TSgetZegop, TC3) {
     EXPECT_EQ(exp, ret);
 }
 
+TEST(t1, Test_Gop) {
+    Cal cal;
+    EXPECT_EQ(6, cal.getGop(2,3));
+}
 
 int main() {
     ::testing::InitGoogleMock();
