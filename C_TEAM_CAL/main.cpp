@@ -3,6 +3,7 @@
 
 class Cal {
 public:
+    int getZegop(int a) { return a * a; };
     int getSum(int a, int b) {
         return a + b;
 	  }
@@ -14,6 +15,28 @@ TEST(t1, t2) {
     EXPECT_EQ(1, 1);
 }
 
+TEST(TSgetZegop, TC1) {
+    int exp = 1;
+    int a = 1;
+    Cal c;
+    int ret = c.getZegop(a);
+    EXPECT_EQ(exp, ret);
+}
+
+TEST(TSgetZegop, TC2) {
+    int exp = 0;
+    int a = 0;
+    Cal c;
+    int ret = c.getZegop(a);
+    EXPECT_EQ(exp, ret);
+}
+
+TEST(TSgetZegop, TC3) {
+    int exp = 4;
+    int a = -2;
+    Cal c;
+    int ret = c.getZegop(a);
+    EXPECT_EQ(exp, ret);
 TEST(CalTest, GetSumTest) {
     Cal calculator;
     EXPECT_EQ(calculator.getSum(1, 1), 2);
