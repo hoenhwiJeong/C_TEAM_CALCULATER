@@ -1,9 +1,12 @@
-#include "gmock/gmock.h"
 #include <iostream>
+#include "gmock/gmock.h"
 
 class Cal {
 public:
     int getZegop(int a) { return a * a; };
+    int getSum(int a, int b) {
+        return a + b;
+	  }
     int getGop(int a, int b) { return a * b; }
 };
 
@@ -34,6 +37,11 @@ TEST(TSgetZegop, TC3) {
     Cal c;
     int ret = c.getZegop(a);
     EXPECT_EQ(exp, ret);
+TEST(CalTest, GetSumTest) {
+    Cal calculator;
+    EXPECT_EQ(calculator.getSum(1, 1), 2);
+    EXPECT_EQ(calculator.getSum(-1, 1), 0);
+    EXPECT_EQ(calculator.getSum(-1, -1), -2);
 }
 
 TEST(t1, Test_Gop) {
