@@ -8,6 +8,7 @@ public:
         return a + b;
 	  }
     int getGop(int a, int b) { return a * b; }
+    int getMinus(int a, int b) { return a - b; }
 };
 
 //Å×½ºÆ® ÄÉÀÌ½º ÀÛ¼º
@@ -42,6 +43,12 @@ TEST(CalTest, GetSumTest) {
     EXPECT_EQ(calculator.getSum(1, 1), 2);
     EXPECT_EQ(calculator.getSum(-1, 1), 0);
     EXPECT_EQ(calculator.getSum(-1, -1), -2);
+}
+  
+TEST(t1, Test_Minus) {
+    Cal c;
+    int actual = c.getMinus(2, 1);
+    EXPECT_EQ(1, actual);
 }
 
 TEST(t1, Test_Gop) {
